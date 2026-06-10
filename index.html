@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#17694c" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Chinese Cards" />
+    <title>Chinese Vocabulary Flashcards</title>
+    <link rel="manifest" href="manifest.webmanifest?v=1" />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icon.svg" />
+    <link rel="stylesheet" href="styles.css?v=3" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="topbar" aria-label="Deck controls">
+        <div>
+          <p class="eyebrow">College Chinese practice</p>
+          <h1>Vocabulary Flashcards</h1>
+        </div>
+        <div class="stats" aria-label="Session statistics">
+          <div>
+            <span id="deck-count">0</span>
+            <small>cards</small>
+          </div>
+          <div>
+            <span id="score">0/0</span>
+            <small>score</small>
+          </div>
+          <div>
+            <span id="streak">0</span>
+            <small>streak</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <aside class="controls" aria-label="Practice settings">
+          <div class="control-group">
+            <label for="deck-select">Deck</label>
+            <select id="deck-select">
+              <option value="all">All lessons + numbers</option>
+              <option value="lesson-1">Lesson 1</option>
+              <option value="lesson-2">Lesson 2</option>
+              <option value="lesson-3">Lesson 3</option>
+              <option value="lesson-4">Lesson 4</option>
+              <option value="numbers">Numbers</option>
+              <option value="custom">My cards</option>
+              <option value="review">Review only</option>
+            </select>
+          </div>
+
+          <div class="control-group">
+            <label>Prompt</label>
+            <div class="segmented" role="group" aria-label="Prompt mode">
+              <button class="mode-button active" type="button" data-mode="hanzi">字</button>
+              <button class="mode-button" type="button" data-mode="english">EN</button>
+              <button class="mode-button" type="button" data-mode="pinyin">PY</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>Options</label>
+            <label class="check-row">
+              <input id="shuffle-toggle" type="checkbox" checked />
+              <span>Shuffle cards</span>
+            </label>
+            <label class="check-row">
+              <input id="type-toggle" type="checkbox" />
+              <span>Typing practice</span>
+            </label>
+          </div>
+
+          <div class="button-grid">
+            <button id="reset-session" class="secondary" type="button" title="Reset session">
+              <span aria-hidden="true">↻</span>
+            </button>
+            <button id="mark-review" class="secondary" type="button" title="Add or remove from review">
+              <span aria-hidden="true">☆</span>
+            </button>
+            <button id="speak-card" class="secondary" type="button" title="Speak Chinese">
+              <span aria-hidden="true">▶</span>
+            </button>
+          </div>
+
+          <form id="add-card-form" class="add-card-form">
+            <label>Add Card</label>
+            <input id="new-hanzi" required placeholder="Chinese characters" />
+            <input id="new-pinyin" required placeholder="Pinyin" />
+            <input id="new-english" required placeholder="English meaning" />
+            <select id="new-deck">
+              <option value="custom">My cards</option>
+              <option value="lesson-1">Lesson 1</option>
+              <option value="lesson-2">Lesson 2</option>
+              <option value="lesson-3">Lesson 3</option>
+              <option value="lesson-4">Lesson 4</option>
+              <option value="numbers">Numbers</option>
+            </select>
+            <button class="primary" type="submit">Add</button>
+            <p id="add-card-status" class="add-card-status"></p>
+          </form>
+        </aside>
+
+        <section class="practice-panel" aria-live="polite">
+          <div class="card-meta">
+            <span id="card-lesson">Lesson</span>
+            <span id="card-position">0 / 0</span>
+          </div>
+
+          <button id="flashcard" class="flashcard" type="button" aria-label="Reveal flashcard answer">
+            <span id="prompt-label" class="prompt-label">Chinese</span>
+            <span id="card-front" class="card-front">我</span>
+            <span id="card-pinyin" class="card-pinyin">wǒ</span>
+            <span id="tap-hint" class="tap-hint">Tap to reveal</span>
+          </button>
+
+          <div id="answer-panel" class="answer-panel hidden">
+            <p id="answer-main"></p>
+            <p id="answer-extra"></p>
+          </div>
+
+          <form id="type-form" class="type-form hidden">
+            <label for="typed-answer">Your answer</label>
+            <div>
+              <input id="typed-answer" autocomplete="off" />
+              <button type="submit">Check</button>
+            </div>
+            <p id="type-feedback" class="type-feedback"></p>
+          </form>
+
+          <div class="actions">
+            <button id="again-button" class="secondary wide" type="button">Again</button>
+            <button id="know-button" class="primary wide" type="button">Know it</button>
+          </div>
+        </section>
+      </section>
+
+      <section class="vocab-table" aria-label="Current deck list">
+        <div class="table-head">
+          <h2>Current Deck</h2>
+          <input id="search-input" type="search" placeholder="Search Chinese, pinyin, or English" />
+        </div>
+        <div id="vocab-list" class="vocab-list"></div>
+      </section>
+    </main>
+
+    <script src="app.js?v=6"></script>
+  </body>
+</html>

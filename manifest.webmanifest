@@ -1,0 +1,18 @@
+{
+  "name": "Chinese Vocabulary Flashcards",
+  "short_name": "Chinese Cards",
+  "description": "Flashcards for Chinese lessons, numbers, and custom vocabulary.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fbfaf6",
+  "theme_color": "#17694c",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

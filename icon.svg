@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#17694c"/>
+  <rect x="88" y="86" width="336" height="340" rx="28" fill="#fffefa"/>
+  <path d="M144 170h224M144 256h224M144 342h160" stroke="#d9dfdb" stroke-width="18" stroke-linecap="round"/>
+  <text x="256" y="296" text-anchor="middle" font-family="PingFang TC, Noto Sans CJK TC, sans-serif" font-size="150" font-weight="800" fill="#18201d">字</text>
+</svg>
